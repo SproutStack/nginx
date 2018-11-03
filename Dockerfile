@@ -1,5 +1,7 @@
 FROM nginx:alpine
 
+MAINTAINER Rhys Botfield <rhys@sproutdesk.co.uk>
+
 RUN apk add --no-cache openssl \
 && mkdir -p /etc/nginx/ssl/ \
     && openssl req -x509 -newkey rsa:4086 -keyout /etc/nginx/ssl/privkey.pem -out /etc/nginx/ssl/cert.pem \
